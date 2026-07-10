@@ -4,13 +4,14 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.viewModels
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.*
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalLayoutDirection
 import androidx.compose.ui.unit.LayoutDirection
+import androidx.compose.ui.unit.dp
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
@@ -105,5 +106,27 @@ fun AppMainScaffold(viewModel: MainViewModel) {
             composable(Screen.Testimonials.route) { TestimonialsScreen(viewModel) }
             composable(Screen.Contact.route) { ContactScreen(viewModel) }
         }
+    }
+}
+
+// إضافة الشاشات المفقودة كـ Composables مؤقتة للسماح ببناء التطبيق بنجاح
+@Composable
+fun PortfolioScreen(viewModel: MainViewModel) {
+    Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
+        Text("شاشة معرض الأعمال قيد التطوير")
+    }
+}
+
+@Composable
+fun TestimonialsScreen(viewModel: MainViewModel) {
+    Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
+        Text("شاشة آراء العملاء قيد التطوير")
+    }
+}
+
+@Composable
+fun ContactScreen(viewModel: MainViewModel) {
+    Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
+        Text("شاشة اتصل بنا قيد التطوير")
     }
 }
